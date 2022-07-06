@@ -1,0 +1,38 @@
+{% extends 'base/base.html' %}
+{% load static %}
+{% block page_content %}
+    <!-- If there are NO pet photos -->
+    {% if not user_file %}
+        <h1 class='text-center'>Вие нямате качен документ</h1>
+        <div class=" row d-flex justify-content-center align-content-center">
+            <!-- Button to Add a new Photo -->
+            <a href="{% url 'upload_document' %}" class="btn btn-lg btn-secondary row align-self-baseline">Kaчете документ</a>
+        </div>
+    {% endif %}
+
+    <!-- If there are pet photos -->
+    {% if user_file %}
+        <h1 class='text-center'>Вашият документ</h1>
+        <div class="container mb-5">
+            <div class="row mb-5">
+
+                <!-- First Card with Info for the Pet -->
+                <div class="card ml-3 mb-3" style="width: 18rem;">
+                    <!-- Image -->
+                    <img src="{% static '/pdf-doc.png' %}" class="card-img-top" alt="Photo description">
+                    <div class="card-body">
+                        <!-- First 30 chars from the description -->
+                        <p class="card-text">Това е вашият документ, който може да бъде използван за...</p>
+                        <!-- Button to the Photo Details Page -->
+                        <a href="{% url 'show_user_pdf' %}" class="btn btn-primary">Виж документ</a>
+                        <a href="{% url 'show_user_pdf' %}" download="" class="btn btn-primary">Сваляне</a>
+                    </div>
+                    <div class="card-body">
+                        <a href="{% url 'update_document' request.user.pk %}" class="btn btn-secondary">Смени документ</a>
+                        <a href="{% url 'delete_document' request.user.pk %}" class="btn btn-secondary">Изтрий</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    {% endif %}
+{% endblock %}

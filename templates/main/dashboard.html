@@ -1,0 +1,44 @@
+{#{% extends 'base/base.html' %}#}
+{#{% load static %}#}
+{#{% block page_content %}#}
+{#    <h1>PDF DOC</h1>#}
+{#    <hr>#}
+{#    <div>#}
+{#        <img src="{% static '/pdf-doc.png' %}" width="300" height="300" alt="PDF DOC">#}
+{#    </div>#}
+{#    <div class="buttons">#}
+{#        <button class="btn btn-primary" type="button">Button</button>#}
+{#        <button class="btn btn-primary" type="button">Button</button>#}
+{#    </div>#}
+{##}
+{#    <style>#}
+{#        .buttons {#}
+{#            position: relative;#}
+{#        }#}
+{#    </style>#}
+{##}
+{#{% endblock %}#}
+
+{##container mb-5#}
+<!-- If there are pet photos -->
+{% extends 'base/base.html' %}
+{% block page_content %}{% load static %}
+    <div class="container mb-5">
+        <div class="row mb-5">
+
+            <!-- First Card with Info for the Pet -->
+            <div class="card ml-3 mb-3" style="width: 18rem;">
+                <!-- Image -->
+                <img src="{% static '/pdf-doc.png' %}"
+                     class="card-img-top" alt="Photo description">
+                <div class="card-body">
+                    <p>Това е документ, който може да бъде използван за.....</p>
+                    <a href="{% url 'show_pdf' %}" class="btn btn-primary">Виж документа</a>
+                    <a href="{% url 'show_pdf' %}" download="" class="btn btn-primary"> Сваляне</a>
+                </div>
+            </div>
+            <!-- End First Card -->
+        </div>
+    </div>
+
+{% endblock %}

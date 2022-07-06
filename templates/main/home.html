@@ -1,0 +1,29 @@
+{% extends 'base/base.html' %}
+{% load static %}
+{% block page_content %}
+    <div class="jumbotron">
+        <div class="position-sticky">
+            <h1 class="display-4">Добре Дошли</h1>
+            <hr class="my-4">
+            <div class="flex-row">
+
+                <!-- Login Button -->
+                <a href="{% url 'login_user' %}" class="btn btn-lg btn-secondary">Влизане</a>
+
+                <!-- Register Button -->
+                <a href="{% url 'register_user' %}" class="btn btn-lg btn-secondary">Регистрация</a>
+                <img src="{% static '/impulse_logo.png' %}" width="200" height="200" id="impulse">
+                <img src="{% static '/peshtera_logo.png' %}" width="200" height="200" id="peshtera">
+            </div>
+        </div>
+    </div>
+
+    <style>
+    #impulse{
+        width: 30%;
+        height: 200px;
+        overflow: hidden;
+
+    }
+</style>
+{% endblock %}

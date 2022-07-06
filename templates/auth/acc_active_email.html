@@ -1,0 +1,5 @@
+{% autoescape off %}  
+Здравейте {{ user.username }},
+Моля, кликнете върху този линк, за да потвъдите ващия акаунт.
+http://{{ domain }}{% url 'activate' uidb64=uid token=token %}  
+{% endautoescape %}

@@ -1,0 +1,24 @@
+{#{% extends 'base/base.html' %}#}
+{#{% block page_content %}#}
+{#    <h1 class="text-center">Влизане</h1>#}
+{#    <h1>Моля сканирайте QR кода</h1>#}
+{#    <div class="row">#}
+{#        <div class="col-lg-3"></div>#}
+{#        <div class="col-lg-6">#}
+{#            <img id='barcode' src="https://api.qrserver.com/v1/create-qr-code/?data={{ qr_data }}" alt="" title="{{ qr_code_img }}" width="200" height="200"/>#}
+{##}
+{#        </div>#}
+{#        <div class="col-lg-3"></div>#}
+{#    </div>#}
+{#{% endblock %}#}
+
+{% extends 'base/base.html' %}
+{% block page_content %}
+    <h1 class="text-center">Влизане</h1>
+    <center><img id='barcode' src="https://api.qrserver.com/v1/create-qr-code/?data={{ qr_data }}" alt=""
+                 title="{{ qr_code_img }}" width="200" height="200"></center>
+    <h5 class="text-center">Моля сканирайте QR кода с телефона си!</h5>
+    <h5 class="text-center"> В случай, че виждате това през мобилния си телефон, моля натиснете буона отдолу</h5>
+    <center><a href="impulse://impulse_app/authentication?request={{ deep_link_string }}" class="btn btn-primary">Click Here To Login</a></center>
+
+{% endblock %}

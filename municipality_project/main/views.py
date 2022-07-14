@@ -17,6 +17,7 @@ class HomeView(TemplateView):
     template_name = 'main/home.html'
 
 
+
 class Dashboard(LoginRequiredMixin, TemplateView):
     template_name = 'main/dashboard.html'
     login_url = reverse_lazy('home')

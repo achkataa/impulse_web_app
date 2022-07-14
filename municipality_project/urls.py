@@ -23,5 +23,6 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include('municipality_project.main.urls')),
     path('auth/', include('municipality_project.auth_app.urls')),
+    path('api/', include('municipality_project.rest_api.urls'))
 
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

@@ -39,12 +39,15 @@ DJANGO_APPS = [
     'django.contrib.staticfiles',
 ]
 
-THIRD_PARTY_APPS = []
+THIRD_PARTY_APPS = [
+    'rest_framework',
+]
 
 
 PROJECT_APPS = [
     'municipality_project.auth_app',
     'municipality_project.main',
+    'municipality_project.rest_api',
     # 'municipality_project.auth_app.apps.AuthAppConfig',
 ]
 

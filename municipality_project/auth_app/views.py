@@ -169,3 +169,7 @@ class LoginWithQRCode(TemplateView):
 class LogoutUser(LogoutView):
     template_name = 'main/home.html'
     next_page = reverse_lazy('home')
+
+
+
+
